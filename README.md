@@ -25,21 +25,21 @@ Ele atua como *Single Source of Truth*, garantindo:
 ## 2. Escopo Funcional
 ### 🔹 Vendas
 
--Registro diário de vendas
+- Registro diário de vendas
 
--Detalhamento por item
+- Detalhamento por item
 
--Base para análise futura de giro e volume
+- Base para análise futura de giro e volume
 
 ### 🔹 Entradas de Estoque
 
--Registro de notas fiscais
+- Registro de notas fiscais
 
--Quantidade recebida por produto
+- Quantidade recebida por produto
 
--Data da entrada
+- Data da entrada
 
--Atualização de custo
+- Atualização de custo
 
 ### 🔹 Saídas de Estoque
 
