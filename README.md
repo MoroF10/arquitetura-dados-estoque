@@ -91,7 +91,7 @@ O sistema mantém histórico temporal de custo dos produtos, permitindo:
 
 Representação das entidades e relacionamentos principais do domínio.
 
-![Diagrama Conceitual](docs/diagrama_conceitual.png.png)
+![Diagrama Conceitual](docs/diagrama_conceitual.png)
 
 ## 🗄️ Modelo Lógico
 
