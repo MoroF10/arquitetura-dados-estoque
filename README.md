@@ -87,6 +87,12 @@ O sistema mantém histórico temporal de custo dos produtos, permitindo:
 
 - Estrutura preparada para escalabilidade
 
+## 📐 Diagrama Conceitual
+
+Representação das entidades e relacionamentos principais do domínio.
+
+![Diagrama Conceitual](docs/diagrama_conceitual.png)
+
 ## 6. Fora do Escopo
 
 O Core não é orientado a BI.
