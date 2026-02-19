@@ -1,67 +1,71 @@
+#📌 Sistema Core OLTP para Gestão de Estoque e Vendas
+
+##1. Objetivo
+
 O banco de dados Core é um sistema transacional (OLTP) projetado para armazenar, de forma estruturada e normalizada, todas as operações relacionadas a:
 
-Vendas
+-Vendas
 
-Movimentações de estoque
+-Movimentações de estoque
 
-Auditorias físicas
+-Auditorias físicas
 
-Histórico de custo dos produtos
+-Histórico de custo dos produtos
 
-Ele atua como Single Source of Truth, garantindo:
+Ele atua como *Single Source of Truth*, garantindo:
 
-Integridade referencial
+-Integridade referencial
 
-Rastreabilidade
+-Rastreabilidade
 
-Consistência
+-Consistência
 
-Escalabilidade
+-Escalabilidade
 
-2. Escopo Funcional
-🔹 Vendas
+##2. Escopo Funcional
+###🔹 Vendas
 
-Registro diário de vendas
+-Registro diário de vendas
 
-Detalhamento por item
+-Detalhamento por item
 
-Base para análise futura de giro e volume
+-Base para análise futura de giro e volume
 
-🔹 Entradas de Estoque
+###🔹 Entradas de Estoque
 
-Registro de notas fiscais
+-Registro de notas fiscais
 
-Quantidade recebida por produto
+-Quantidade recebida por produto
 
-Data da entrada
+-Data da entrada
 
-Atualização de custo
+-Atualização de custo
 
-🔹 Saídas de Estoque
+###🔹 Saídas de Estoque
 
-Perdas
+-Perdas
 
-Ajustes manuais
+-Ajustes manuais
 
-Transferências
+-Transferências
 
-Consumo interno
+-Consumo interno
 
-Outras saídas operacionais
+-Outras saídas operacionais
 
-3. Auditoria de Estoque
+##3. Auditoria de Estoque
 
 O modelo contempla auditoria física periódica com:
 
-Registro da contagem física
+-Registro da contagem física
 
-Comparação com saldo teórico
+-Comparação com saldo teórico
 
-Registro de divergências
+-Registro de divergências
 
-Histórico por produto e data
+-Histórico por produto e data
 
-Permite rastreabilidade completa de perdas e inconsistências.
+-Permite rastreabilidade completa de perdas e inconsistências.
 
 4. Histórico de Custos
 
