@@ -43,29 +43,29 @@ Ele atua como *Single Source of Truth*, garantindo:
 
 ### 🔹 Saídas de Estoque
 
--Perdas
+- Perdas
 
--Ajustes manuais
+- Ajustes manuais
 
--Transferências
+- Transferências
 
--Consumo interno
+- Consumo interno
 
--Outras saídas operacionais
+- Outras saídas operacionais
 
 ## 3. Auditoria de Estoque
 
 O modelo contempla auditoria física periódica com:
 
--Registro da contagem física
+- Registro da contagem física
 
--Comparação com saldo teórico
+- Comparação com saldo teórico
 
--Registro de divergências
+- Registro de divergências
 
--Histórico por produto e data
+- Histórico por produto e data
 
--Permite rastreabilidade completa de perdas e inconsistências.
+- Permite rastreabilidade completa de perdas e inconsistências.
 
 ## 4. Histórico de Custos
 
@@ -79,42 +79,42 @@ O sistema mantém histórico temporal de custo dos produtos, permitindo:
 
 ## 5. Modelagem de Dados
 
-Terceira Forma Normal (3FN)
+- Terceira Forma Normal (3FN)
 
-Estratégia Snowflake
+- Estratégia Snowflake
 
-Integridade referencial com constraints
+- Integridade referencial com constraints
 
-Estrutura preparada para escalabilidade
+- Estrutura preparada para escalabilidade
 
-6. Fora do Escopo
+## 6. Fora do Escopo
 
 O Core não é orientado a BI.
 
 Não contém:
 
-Tabelas fato
+- Tabelas fato
 
-Métricas agregadas
+- Métricas agregadas
 
-Snapshots analíticos
+- Snapshots analíticos
 
-Views voltadas para Power BI
+- Views voltadas para Power BI
 
-7. Integração com Camada Analítica
+## 7. Integração com Camada Analítica
 
 O Core serve como origem para:
 
-Data Warehouse
+- Data Warehouse
 
-Data Mart
+- Data Mart
 
-Modelagem estrela
+- Modelagem estrela
 
 A separação entre OLTP e OLAP garante:
 
-Performance
+- Performance
 
-Clareza arquitetural
+- Clareza arquitetural
 
-Evolução independente das camadas
+- Evolução independente das camadas
