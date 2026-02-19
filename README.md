@@ -118,3 +118,12 @@ A separação entre OLTP e OLAP garante:
 - Clareza arquitetural
 
 - Evolução independente das camadas
+
+## 🛠️ Tecnologias Utilizadas
+
+- PostgreSQL
+- Python (ETL de XML)
+- SQL
+- Modelagem 3FN
+- Snowflake
+- Power BI (camada analítica)
