@@ -31,7 +31,7 @@ Ele atua como *Single Source of Truth*, garantindo:
 
 -Base para análise futura de giro e volume
 
-###🔹 Entradas de Estoque
+### 🔹 Entradas de Estoque
 
 -Registro de notas fiscais
 
@@ -41,7 +41,7 @@ Ele atua como *Single Source of Truth*, garantindo:
 
 -Atualização de custo
 
-###🔹 Saídas de Estoque
+### 🔹 Saídas de Estoque
 
 -Perdas
 
@@ -53,7 +53,7 @@ Ele atua como *Single Source of Truth*, garantindo:
 
 -Outras saídas operacionais
 
-##3. Auditoria de Estoque
+## 3. Auditoria de Estoque
 
 O modelo contempla auditoria física periódica com:
 
@@ -67,17 +67,17 @@ O modelo contempla auditoria física periódica com:
 
 -Permite rastreabilidade completa de perdas e inconsistências.
 
-4. Histórico de Custos
+## 4. Histórico de Custos
 
 O sistema mantém histórico temporal de custo dos produtos, permitindo:
 
-Análise de margem
+- Análise de margem
 
-Avaliação de impacto de custo
+- Avaliação de impacto de custo
 
-Evolução de preços ao longo do tempo
+- Evolução de preços ao longo do tempo
 
-5. Modelagem de Dados
+## 5. Modelagem de Dados
 
 Terceira Forma Normal (3FN)
 
