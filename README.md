@@ -23,7 +23,7 @@ Ele atua como *Single Source of Truth*, garantindo:
 - Escalabilidade
 
 ## 2. Escopo Funcional
-###🔹 Vendas
+### 🔹 Vendas
 
 -Registro diário de vendas
 
