@@ -91,7 +91,13 @@ O sistema mantém histórico temporal de custo dos produtos, permitindo:
 
 Representação das entidades e relacionamentos principais do domínio.
 
-![Diagrama Conceitual](docs/diagrama_conceitual.png)
+![Diagrama Conceitual](docs/diagrama_conceitual.png.png)
+
+## 🗄️ Modelo Lógico
+
+Estrutura detalhada das tabelas com chaves primárias, estrangeiras e tipos de dados.
+
+![Modelo Lógico](docs/modelo_logico.png.png)
 
 ## 6. Fora do Escopo
 
