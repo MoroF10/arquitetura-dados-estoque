@@ -1,6 +1,6 @@
 # 📌 Sistema Core OLTP para Gestão de Estoque e Vendas
 
-##1. Objetivo
+## 1. Objetivo
 
 O banco de dados Core é um sistema transacional (OLTP) projetado para armazenar, de forma estruturada e normalizada, todas as operações relacionadas a:
 
