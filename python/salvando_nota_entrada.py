@@ -202,7 +202,7 @@ def inserir_venda(conn, itens):
 #Dados da conexão com o banco
 def main():
     try:
-        caminho = ""
+        caminho = "docs/xml/nota_teste.xml"
         conn = psycopg2.connect(
         database= "estoque_vendas",
         user=user,
