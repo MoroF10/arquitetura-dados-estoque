@@ -31,7 +31,7 @@ def carregar_dados(engine, df):
     index=False)
   
 def main():
-  caminho_csv = ''
+  caminho_csv = 'docs/csv/produto_preço.csv'
   engine = conectar_banco()
   df = ler_trata_csv(caminho_csv)
   carregar_dados(engine, df)
