@@ -1,5 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
+import os
 
 # --- Configurações de conexão ---
 usuario = os.getenv("DB_USER")
