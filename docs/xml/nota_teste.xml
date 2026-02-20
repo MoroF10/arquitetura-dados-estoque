@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <NFe>
+        <infNFe Id="NFe00000000000000000000000000000000000000000000" versao="4.00">
+            
+            <ide>
+                <cUF>35</cUF>
+                <cNF>12345678</cNF>
+                <natOp>VENDA</natOp>
+                <mod>55</mod>
+                <serie>1</serie>
+                <nNF>12345</nNF>
+                <dhEmi>2026-02-20T10:00:00-03:00</dhEmi>
+                <tpNF>1</tpNF>
+            </ide>
+
+            <det nItem="1">
+                <prod>
+                    <cProd>1001</cProd>
+                    <xProd>PRODUTO TESTE 12UN</xProd>
+                    <qCom>10.0000</qCom>
+                    <vProd>150.00</vProd>
+                </prod>
+
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>0</orig>
+                            <CST>00</CST>
+                            <vICMS>27.00</vICMS>
+                        </ICMS00>
+                    </ICMS>
+
+                    <IPI>
+                        <IPITrib>
+                            <vIPI>5.00</vIPI>
+                        </IPITrib>
+                    </IPI>
+
+                    <PIS>
+                        <PISAliq>
+                            <vPIS>3.00</vPIS>
+                        </PISAliq>
+                    </PIS>
+
+                    <COFINS>
+                        <COFINSAliq>
+                            <vCOFINS>6.00</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+
+                <rastro>
+                    <nLote>LOTE123</nLote>
+                    <dFab>2026-01-01</dFab>
+                    <dVal>2027-01-01</dVal>
+                </rastro>
+
+            </det>
+
+        </infNFe>
+    </NFe>
+</nfeProc>
