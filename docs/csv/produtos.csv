@@ -1,0 +1,5 @@
+codigo_produto;id_classe;nome_produto;id_tipo_produto;produto_controla_estoque
+0;1;Trufa Chocolate;1;True
+1;1;Trufa Chocolate Branco;1;True
+2;1;Barra Chocolate;1;True
+3;1;Biscoito;1;True
