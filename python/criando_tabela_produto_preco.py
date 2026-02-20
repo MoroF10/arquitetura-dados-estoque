@@ -27,7 +27,7 @@ def carregar_dados(engine, df):
   df.to_sql(
     'historico_preco_produto', 
     engine, 
-    if_exists='replace',
+    if_exists='append',
     schema='core', 
     index=False)
   
