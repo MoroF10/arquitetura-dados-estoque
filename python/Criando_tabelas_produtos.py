@@ -32,13 +32,15 @@ def carrega_dados(df, engine):
     index=False)
 
 def main():
-  caminho = 'docs/csv/produtos.csv'
+  try:
+    caminho = 'docs/csv/produtos.csv'  
+    engine = conectar_banco()
+    df = ler_trata_csv(caminho)
+    carrega_dados(df, engine)  
+    print("Carga adicionada com sucesso!")
 
-  engine = conectar_banco()
-  df = ler_trata_csv(caminho)
-  carrega_dados(df, engine)
-
-  print("Carga adicionada com sucesso!")
+  except Exception as e:
+    print(f"Erro na execução: {e}")
 
 
 if __name__ == "__main__":
