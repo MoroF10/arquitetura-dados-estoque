@@ -1,6 +1,7 @@
 #Importando aS bibliotecas usadas 
 import pandas as pd
 from sqlalchemy import create_engine, text
+import os
 
 
 # --- Configurações de conexão ---
