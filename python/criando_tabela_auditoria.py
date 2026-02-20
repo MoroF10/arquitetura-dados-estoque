@@ -87,7 +87,7 @@ def processar_auditoria_csv(conn, caminho):
 #Dados da conexão com o banco
 def main():
     try:
-        caminho = ''
+        caminho = 'docs/csv/auditoria.csv'
         conn = psycopg2.connect(
         database= "estoque_vendas",
         user=user,
