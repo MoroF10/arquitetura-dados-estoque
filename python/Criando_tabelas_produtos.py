@@ -9,7 +9,7 @@ senha = os.getenv("DB_PASSWORD")
 host = os.getenv("DB_HOST")
 porta = os.getenv("DB_PORT")
 banco = os.getenv("DB_NAME")
-schema = "core"        # use o schema que você criou, ou None se for 'public'
+schema = "core"        
 
 def conectar_banco():
   engine = create_engine(
