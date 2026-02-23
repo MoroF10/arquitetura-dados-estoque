@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe>
+    <infNFe Id="NFe00000000000000000000000000000000000000000000" versao="4.00">
+      
+      <ide>
+        <dhEmi>2026-02-23T14:30:00-03:00</dhEmi>
+      </ide>
+
+      <det nItem="1">
+        <prod>
+          <cProd>0</cProd>
+          <qCom>2.0000</qCom>
+          <vUnCom>10.50</vUnCom>
+        </prod>
+      </det>
+
+      <total>
+        <ICMSTot>
+          <vProd>21.00</vProd>
+          <vTotTrib>2.10</vTotTrib>
+        </ICMSTot>
+      </total>
+
+      <pag>
+        <detPag>
+          <tPag>01</tPag>
+          <xPag>Dinheiro</xPag>
+        </detPag>
+      </pag>
+
+    </infNFe>
+  </NFe>
+
+  <protNFe>
+    <infProt>
+      <chNFe>00000000000000000000000000000000000000000000</chNFe>
+    </infProt>
+  </protNFe>
+
+</nfeProc>
