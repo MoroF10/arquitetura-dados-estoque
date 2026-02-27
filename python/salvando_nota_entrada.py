@@ -75,8 +75,13 @@ def itens_venda(caminho):
         quantidade_total = None
         if unidades_por_caixa and quantidade_caixas:
             quantidade_total = int(unidades_por_caixa * quantidade_caixas)
+        else:
+            quantidade_total = 1
         produto_mais_impostos = preco_unitario_vendido + icms + ipi+ pis + cofins
-        preco_unidade = produto_mais_impostos / quantidade_total if quantidade_total else 0.0
+        if quantidade_total and quantidade_total > 0:
+            preco_unidade = produto_mais_impostos / quantidade_total
+        else:
+            preco_unidade = 1
         
         
         item_dict = {
