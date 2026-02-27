@@ -43,3 +43,38 @@ CREATE TRIGGER trg_atualizar_historico_preco
 AFTER INSERT ON core.item_entrada
 FOR EACH ROW
 EXECUTE FUNCTION core.fn_atualizar_historico_preco();
+
+
+/*Criando trigger que vai automaticamente adicionar o valor do preço do produto no histórico*/
+CREATE OR REPLACE FUNCTION core.fn_movimenta_estoque_venda()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_data_venda TIMESTAMP;
+BEGIN
+
+    SELECT data_venda
+    INTO v_data_venda
+    FROM core.venda
+    WHERE id_venda = NEW.id_venda;
+
+    INSERT INTO core.movimento_estoque (
+        codigo_produto,
+        quantidade,
+        data_movimentacao,
+        id_tipo_movimentacao,
+        id_item_entrada
+    )
+    VALUES (
+        NEW.codigo_produto,
+        NEW.quantidade,
+        v_data_venda,
+        2,
+        NULL
+    );
+
+    RETURN NEW;
+
+END;
+$$;
