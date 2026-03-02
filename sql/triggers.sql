@@ -53,12 +53,13 @@ AS $$
 DECLARE
     v_data_venda TIMESTAMP;
 BEGIN
-
-    SELECT data_venda
+    -- Buscar data da venda
+    SELECT v.data_venda
     INTO v_data_venda
-    FROM core.venda
-    WHERE id_venda = NEW.id_venda;
+    FROM core.venda v
+    WHERE v.id_venda = NEW.id_venda;
 
+    -- Inserir movimentação de saída
     INSERT INTO core.movimento_estoque (
         codigo_produto,
         quantidade,
@@ -70,11 +71,15 @@ BEGIN
         NEW.codigo_produto,
         NEW.quantidade,
         v_data_venda,
-        2,
+        2, -- 2 = Saída (confirme na sua tabela tipo_movimentacao_estoque)
         NULL
     );
 
     RETURN NEW;
-
 END;
 $$;
+
+CREATE TRIGGER trg_movimenta_estoque_venda
+AFTER INSERT ON core.item_venda
+FOR EACH ROW
+EXECUTE FUNCTION core.fn_movimenta_estoque_venda();
