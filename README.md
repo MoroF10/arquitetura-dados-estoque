@@ -108,19 +108,16 @@ Ele consome dados do Core e transforma em modelo analítico otimizado para BI.
 
   - Fato Vendas
 
-  - Fato Movimentação
-
   - Fato Snapshot de Estoque
 
 - Dimensões:
 
   - Dim Produto
 
-  - Dim Data
+  - Dim Calendario
 
-  - Dim Tipo Movimentação
+  - Dim Forma Pagamento
 
-  - Dim Classe
 
 ### 📊 Recursos Analíticos
 
