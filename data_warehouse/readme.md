@@ -26,6 +26,8 @@ O DW consome exclusivamente dados do Core, respeitando a separação entre OLTP 
 
 ## 3. Modelagem Dimensional
 
+![Modelo Conceitual](docs/modelo_conceitual.png)
+
 A modelagem segue o padrão Star Schema, com tabelas fato centralizadas e dimensões desnormalizadas para otimizar consultas analíticas.
 
 ### 🔹 Tabelas Fato
@@ -47,6 +49,7 @@ A modelagem segue o padrão Star Schema, com tabelas fato centralizadas e dimens
   - Base para cálculo de cobertura e giro
 
   - Permite análise temporal do saldo
+ 
 
 ### 🔹 Tabelas Dimensão
 
