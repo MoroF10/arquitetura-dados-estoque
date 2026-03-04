@@ -54,7 +54,7 @@ A modelagem segue o padrão Star Schema, com tabelas fato centralizadas e dimens
 
 - dim_calendario
 
-- dim_tipo_movimentacao
+- dim_forma_pagamento
 
 - dim_forma_pagamento
 
