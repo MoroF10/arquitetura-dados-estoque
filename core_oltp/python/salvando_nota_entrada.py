@@ -14,6 +14,10 @@ schema = "core"
 
 ns = {"nfe": "http://www.portalfiscal.inf.br/nfe"}
 
+#Arruma os nomes para inserir no banco
+def normalizar_nome(nome):
+    return nome.strip().lower().capitalize()
+    
 #Função para extrair a quantidade de unidade que vem em uma caixa
 def extrair_unidades_por_caixa(descricao):
     if not descricao:
@@ -146,6 +150,8 @@ def inserir_venda(conn, itens):
 
         # Inserir itens
         for item in itens:
+
+            nome_produto = normalizar_nome(item["nome_produto"])
             
             cur.execute("""
                 INSERT INTO core.produto (codigo_produto, id_classe, nome_produto, id_tipo_produto, status_cadastro, produto_controla_estoque)
@@ -154,7 +160,7 @@ def inserir_venda(conn, itens):
             """, (
                 item["codigo_produto"],
                 22,
-                item["nome_produto"],
+                nome_produto,
                 1,
                 "PENDENTE",
                 True
