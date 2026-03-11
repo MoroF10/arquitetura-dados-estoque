@@ -18,6 +18,16 @@ try:
 
     conn.commit()
 
+     cur.execute("""
+        SELECT MAX(data_id)
+        FROM dw.fato_estoque_snapshot
+    """)
+
+     ultima_data = cur.fetchone()[0]
+     print("Último snapshot gerado:", ultima_data)
+
+    print(f"ETL finalizado: {datetime.now()}")
+
     print(f"ETL finalizado: {datetime.now()}")
 
 except Exception as e:
