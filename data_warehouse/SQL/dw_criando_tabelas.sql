@@ -96,3 +96,21 @@ ON dw.fato_venda (codigo_produto);
 
 CREATE INDEX idx_fv_forma_pagamento
 ON dw.fato_venda (id_forma_pagamento);
+
+
+/*Criação da tabela de Log*/
+CREATE TABLE dw.log_execucao_etl (
+    id_execucao SERIAL PRIMARY KEY,
+
+    inicio_execucao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fim_execucao TIMESTAMP,
+
+    data_inicio_processada DATE,
+    data_fim_processada DATE,
+
+    registros_fato_venda INT,
+    snapshots_gerados INT,
+
+    status VARCHAR(20),
+    mensagem TEXT
+);
