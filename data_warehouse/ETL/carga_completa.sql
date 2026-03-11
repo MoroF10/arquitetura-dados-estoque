@@ -3,48 +3,54 @@ CREATE OR REPLACE PROCEDURE dw.carga_completa()
 LANGUAGE plpgsql
 AS $$
 DECLARE
+    v_execucao_id INT;
+
     v_data_ultima_snapshot DATE;
     v_data_max_oltp DATE;
     v_data_atual DATE;
+
+    v_snapshots_gerados INT := 0;
+    v_data_inicio_processada DATE;
 BEGIN
 
-    --  Atualizar dimensão
+    -- registrar início
+    INSERT INTO dw.log_execucao_etl(status, mensagem)
+    VALUES ('INICIADO', 'Carga DW iniciada')
+    RETURNING id_execucao INTO v_execucao_id;
+
     CALL dw.atualizar_dim_produto();
 
-    -- Atualizar fato venda
     CALL dw.atualizar_fato_venda();
 
-    -- Buscar última data do snapshot
     SELECT MAX(dc.data_ref)
     INTO v_data_ultima_snapshot
     FROM dw.fato_estoque_snapshot fs
     JOIN dw.dim_calendario dc ON fs.data_id = dc.data_id;
 
-    -- Se não existir snapshot ainda, usar data inicial fixa
     IF v_data_ultima_snapshot IS NULL THEN
         v_data_ultima_snapshot := DATE '2026-02-27';
     END IF;
 
-    -- Buscar última data existente no OLTP
     SELECT MAX(DATE(data_movimentacao))
     INTO v_data_max_oltp
     FROM core.movimento_estoque;
 
-    -- Segurança: se não houver movimentação, sair
     IF v_data_max_oltp IS NULL THEN
         RAISE NOTICE 'Nenhuma movimentação encontrada.';
         RETURN;
     END IF;
 
-    -- Começar no próximo dia após o último snapshot
     v_data_atual := v_data_ultima_snapshot + 1;
+    v_data_inicio_processada := v_data_atual;
 
-    -- Loop incremental dia a dia
+    -- loop de snapshots
     WHILE v_data_atual <= v_data_max_oltp LOOP
 
         RAISE NOTICE 'Gerando snapshot para %', v_data_atual;
 
         CALL dw.gerar_snapshot_estoque(v_data_atual);
+
+        v_snapshots_gerados := v_snapshots_gerados + 1;
 
         v_data_atual := v_data_atual + 1;
 
