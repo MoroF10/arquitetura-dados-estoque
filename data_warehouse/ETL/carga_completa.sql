@@ -56,5 +56,27 @@ BEGIN
 
     END LOOP;
 
+    -- atualizar log com sucesso
+    UPDATE dw.log_execucao_etl
+    SET
+        fim_execucao = CURRENT_TIMESTAMP,
+        data_inicio_processada = v_data_inicio_processada,
+        data_fim_processada = v_data_max_oltp,
+        snapshots_gerados = v_snapshots_gerados,
+        status = 'SUCESSO'
+    WHERE id_execucao = v_execucao_id;
+
+EXCEPTION
+WHEN OTHERS THEN
+
+    UPDATE dw.log_execucao_etl
+    SET
+        fim_execucao = CURRENT_TIMESTAMP,
+        status = 'ERRO',
+        mensagem = SQLERRM
+    WHERE id_execucao = v_execucao_id;
+
+    RAISE;
+
 END;
 $$;
