@@ -26,9 +26,18 @@ try:
      ultima_data = cur.fetchone()[0]
      print("Último snapshot gerado:", ultima_data)
 
-    print(f"ETL finalizado: {datetime.now()}")
+    cur.execute("""
+        SELECT
+            MAX(data_id),
+            COUNT(*)
+        FROM dw.fato_estoque_snapshot;
+    """)
+
+     qtd_inserida = cur.fetchone()[1]
+     print("Quantidade de registros:", qtd_inserida)
 
     print(f"ETL finalizado: {datetime.now()}")
+
 
 except Exception as e:
 
