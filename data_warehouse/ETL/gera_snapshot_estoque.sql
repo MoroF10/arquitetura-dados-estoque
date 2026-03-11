@@ -22,19 +22,20 @@ BEGIN
     INSERT INTO dw.fato_estoque_snapshot (codigo_produto, data_id, quantidade)
 
     SELECT
-        prev.codigo_produto,
+        COALESCE(prev.codigo_produto, mov.codigo_produto) AS codigo_produto,
         v_data_id_hoje,
-        prev.quantidade + COALESCE(mov.movimentacao_dia, 0) AS saldo_final
+        COALESCE(prev.quantidade,0) + COALESCE(mov.movimentacao_dia,0) AS saldo_final
 
     FROM dw.fato_estoque_snapshot prev
 
-    LEFT JOIN
+    FULL JOIN
     (
         SELECT
             m.codigo_produto,
             SUM(
                 CASE
                     WHEN m.id_tipo_movimentacao = 4 THEN m.quantidade
+					WHEN m.id_tipo_movimentacao = 1 THEN m.quantidade
                     WHEN m.id_tipo_movimentacao = 2 THEN -m.quantidade
                     ELSE 0
                 END
@@ -44,8 +45,10 @@ BEGIN
         GROUP BY m.codigo_produto
     ) mov
         ON mov.codigo_produto = prev.codigo_produto
-
+		AND prev.data_id = v_data_id_ontem
+		
     WHERE prev.data_id = v_data_id_ontem
+		OR prev.data_id IS NULL
 
     ON CONFLICT (codigo_produto, data_id)
     DO UPDATE
@@ -55,5 +58,4 @@ END;
 $$;
 
 
-/*selecionando a data para executar o codigo*/
-CALL dw.gerar_snapshot_estoque('2026-03-03');
+
